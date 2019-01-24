@@ -25,12 +25,28 @@ time.sleep(10)
 #link =
 link = driver.find_element_by_accessibility_id("test1")
 link.click()
+#link1 = driver.find_element_by_accessibility_id("test2")
+#link1.click()
+
+
 #link.click()
 link.send_keys("Hello world! hello world! robot testing robot testing ");
 driver.hide_keyboard()
-button = driver.find_element_by_accessibility_id("button1")
 
+link1 = driver.find_element_by_accessibility_id("test2")
+link1.click()
+link1.send_keys("assdsdfdasfdas")
+driver.hide_keyboard()
+
+chek = driver.find_element_by_accessibility_id("test3")
+
+
+
+button = driver.find_element_by_accessibility_id("button1")
 actions = TouchAction(driver)
+actions.tap(chek)
+actions.perform()
+
 actions.tap(button)
 actions.perform()
 
@@ -46,5 +62,6 @@ actions.perform()
 
 # important; you will not be able to launch again if this does not 
 #happen
+
 driver.quit()
 print "test is done!"
