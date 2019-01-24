@@ -62,6 +62,6 @@ actions.perform()
 
 # important; you will not be able to launch again if this does not 
 #happen
-
+time.sleep(3)
 driver.quit()
 print "test is done!"
