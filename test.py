@@ -1,6 +1,7 @@
 import os
 import time
 from appium import webdriver
+from appium.webdriver.common.touch_action import TouchAction
 
 driver = webdriver.Remote(
     command_executor='http://127.0.0.1:4723/wd/hub',
@@ -24,11 +25,19 @@ time.sleep(10)
 #link =
 link = driver.find_element_by_accessibility_id("test1")
 link.click()
-link.click()
-link.send_keys("Hello world!djaskflhasdjklfhsdajklfhdsajkfldhasjksdl");
-
 #link.click()
+link.send_keys("Hello world! hello world! robot testing robot testing ");
+driver.hide_keyboard()
+button = driver.find_element_by_accessibility_id("button1")
 
+actions = TouchAction(driver)
+actions.tap(button)
+actions.perform()
+
+
+#button = driver.find_element_by_accessibility_id("button1") 
+#link.click()
+#button.click()
 # wait for the next screen to load
 ##time.sleep(10)
 
@@ -38,3 +47,4 @@ link.send_keys("Hello world!djaskflhasdjklfhsdajklfhdsajkfldhasjksdl");
 # important; you will not be able to launch again if this does not 
 #happen
 driver.quit()
+print "test is done!"
