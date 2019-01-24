@@ -25,6 +25,8 @@ time.sleep(10)
 link = driver.find_element_by_accessibility_id("test1")
 link.click()
 link.click()
+link.send_keys("Hello world!djaskflhasdjklfhsdajklfhdsajkfldhasjksdl");
+
 #link.click()
 
 # wait for the next screen to load
